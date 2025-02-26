@@ -42,3 +42,15 @@ print(housing.isnull().sum())
 # median_house_value      0
 # ocean_proximity         0
 # dtype: int64
+
+
+#substuindo os valores faltantes pela mediana
+median = housing["total_bedrooms"].median()
+
+housing["total_bedrooms"].fillna(median, inplace=True)
+
+
+#verificando se ainda existem valores faltantes
+print(housing.isnull().sum())
+
+
